@@ -27,7 +27,7 @@ class Main extends Component {
                     <Jumbotron fluid>
                         <Container>
                             <h1>Danny Squitin</h1>
-                            <p>Homebrew. Bourbon. BBQ. Engineering. Travel.</p>
+                            <p>Brewin' Beerz</p>
                             <Navbar collapseOnSelect>
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                                 <Navbar.Collapse id="responsive-navbar-nav">
