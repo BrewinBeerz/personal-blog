@@ -1,0 +1,31 @@
+.card {
+    font-family: 'Inconsolata', monospace !important;
+    padding-bottom: 40px !important;
+}
+
+.card-title {
+    text-decoration: underline !important;
+}
+
+.card-body {
+    margin-left: 125px !important;
+    margin-right: 125px !important;}
+
+.card-text {
+    padding-bottom: 10px !important;
+
+}
+
+.card-img {
+    width: 30% !important;
+    border-radius: 50% !important;
+
+}
+
+#links {
+    padding:20px !important;
+}
+
+#social {
+    padding: 20px !important;
+}

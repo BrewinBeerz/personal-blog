@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Montserrat&display=swap');
+
+.jumbotron {
+    text-align: center;
+    background-color: white !important;
+    color: black !important;
+    font-family: 'Inconsolata', monospace !important;
+}
+
+.navbar {
+    border-top-style: solid;
+    border-top-width: 1px !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 1px !important;
+    font-family: 'Inconsolata', monospace !important;
+
+}
