@@ -29,8 +29,10 @@ class Home extends Component {
                     <Card.Body>
                         <Card.Title>About Me</Card.Title>
                         <Card.Text>
-                            <p>Hey, I'm Danny! I work in tech. I built this site so that I could share some cool things I've picked up my 31 years of life on this planet. My girlfriend and I recently moved from Atlanta, GA to Phoenix, AZ with our mini-zoo of dogs and cats. </p>
-                            <p>Beer, BBQ and Bourbon are life! Nothing beats a relaxing Sunday afternoon with a nice bourbon and a cigar, tending to the  smoker. When we're not at home or with friends , we're out exploring our new surrounding out west!</p>
+                            <p>Hey, I'm Danny! I work in tech. My girlfriend and I just moved from Atlanta, GA to Phoenix, AZ with our mini-zoo of dogs and cats.</p>
+                            <p>Beer, BBQ and Bourbon are life! Nothing beats a relaxing Sunday afternoon with a nice bourbon and a cigar, tending to the  smoker. When we're not at home or with friends, we're out exploring our new surroundings out west! Traveling has been a big part of our lives and it's something I encourage everyone to do!</p>
+                            <p>I built this site so that I could share some of the cool things I've picked up on over the years. From recipes to travel tips, there a little bit of everything here. Enjoy!</p>
+                            <p>P.S. Check out the social links below for more!</p>
                         </Card.Text>
                     </Card.Body>
                     <CardImg className="ml-auto mr-auto" src="/IMG_4492.png" roundedCircle />
