@@ -1,17 +1,20 @@
 import React, {
     Component
 } from "react";
+import $ from 'jquery'; 
 import OlMap from "ol/Map";
 import OlView from "ol/View";
 import OlLayerTile from "ol/layer/Tile";
 import {fromLonLat} from 'ol/proj';
 import Stamen from 'ol/source/Stamen';
+import OlOverlay from 'ol/Overlay'
+import OlControl from 'ol/control'
+import OlPixel from 'ol/pixel'
 import OlFeature from 'ol/Feature'
 import OlGeomPoint from 'ol/geom/Point'
 import OlSourceVector from 'ol/source/Vector'
 import OlLayerVector from 'ol/layer/Vector'  
 import {Icon, Style} from 'ol/style';
-
 
 class PublicMap extends Component {
     constructor(props) {
@@ -253,7 +256,7 @@ class PublicMap extends Component {
             source: vectorSource,
             style: new Style({
             image: new Icon({
-                anchor: [0.5, 0.5],
+                anchor: [0.5, 0.97],
                 anchorXUnits: "fraction",
                 anchorYUnits: "fraction",
                 src: "/map-marker.svg"
@@ -308,8 +311,11 @@ class PublicMap extends Component {
 
     render() {
         return (
-            <div id="map" style={{ width: "100%", height: "580px" }}>
+            <div>
+                <div id="map" style={{ width: "100%", height: "580px" }}></div>
+                <div id="popup"></div>
             </div>
+
         );
     }
 }
