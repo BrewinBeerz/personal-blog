@@ -182,18 +182,6 @@ class PublicMap extends Component {
             ),
         });
 
-        var grandcanyon = new OlFeature({
-            geometry: new OlGeomPoint(
-            fromLonLat([-112.1401,36.0544])
-            ),
-        });
-
-        var zion = new OlFeature({
-            geometry: new OlGeomPoint(
-            fromLonLat([-113.0263,37.2982])
-            ),
-        });
-
         var charlotte = new OlFeature({
             geometry: new OlGeomPoint(
             fromLonLat([-80.8431,35.2271])
@@ -238,19 +226,78 @@ class PublicMap extends Component {
 
         var philadelphia = new OlFeature({
             geometry: new OlGeomPoint(
-                fromLonLat([-75.1652,39.9526])
-            )
+            fromLonLat([-75.1652,39.9526])
+            ),
         });
 
         var longisland = new OlFeature({
             geometry: new OlGeomPoint(
-                fromLonLat([-73.1350,40.7891])
-            )
+            fromLonLat([-73.1350,40.7891])
+            ),
+        });
+
+        var arches = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-109.5925,38.7331])
+            ),
+        })
+
+        var brycecanyon = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-112.1871,37.5930])
+            ),
+        })
+
+        var canyonlands = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-109.8783,38.3269])
+            ),
+        })
+
+        var grandcanyon = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-112.1401,36.0544])
+            ),
+        });
+
+        var joshuatree = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-115.9010,33.8734])
+            ),
+        })
+
+        var mtranier = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-121.7269,46.8800])
+            ),
+
+        })
+
+        var rockymountain = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-105.6836,40.3428])
+            ),
+        })
+
+        var saguaro = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-111.1666,32.2967])
+            ),
+        })
+
+        var zion = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-113.0263,37.2982])
+            ),
         });
 
         var vectorSource = new OlSourceVector({
-            features: [newyork, buffalo, tampa, miami, keywest, nashville ,orlando, cleveland, pittsburgh, boston, richmond, washdc, atlanta, stlouis, bigbear, denver, steamboat, amarillo, phoenix, seattle, lasvegas, moab, grandcanyon, zion, chicago, neworleans, louisville, lexington, charlotte, tallahassee, baltimore, lakegeorge, watkinsglen, fayetteville, jerseycity, philadelphia, fourcorners, longisland]
+            features: [newyork, buffalo, tampa, miami, keywest, nashville ,orlando, cleveland, pittsburgh, boston, richmond, washdc, atlanta, stlouis, bigbear, denver, steamboat, amarillo, phoenix, seattle, lasvegas, chicago, neworleans, louisville, lexington, charlotte, tallahassee, baltimore, lakegeorge, watkinsglen, fayetteville, jerseycity, philadelphia, fourcorners, longisland]
         });
+
+        var vectorSourceNP = new OlSourceVector({
+            features: [arches, brycecanyon, canyonlands, grandcanyon, joshuatree, mtranier, rockymountain, saguaro, zion]
+        })
 
         var markerVectorLayer = new OlLayerVector({
             source: vectorSource,
@@ -260,6 +307,18 @@ class PublicMap extends Component {
                 anchorXUnits: "fraction",
                 anchorYUnits: "fraction",
                 src: "/map-marker.svg"
+            })
+            })
+        });
+
+        var markerVectorLayerNP = new OlLayerVector({
+            source: vectorSourceNP,
+            style: new Style({
+            image: new Icon({
+                anchor: [0.5, 0.97],
+                anchorXUnits: "fraction",
+                anchorYUnits: "fraction",
+                src: "/map-marker-np.svg"
             })
             })
         });
@@ -285,6 +344,7 @@ class PublicMap extends Component {
         });
 
         this.olmap.addLayer(markerVectorLayer);
+        this.olmap.addLayer(markerVectorLayerNP);
 
     }
 
