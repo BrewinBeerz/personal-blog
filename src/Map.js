@@ -10,6 +10,7 @@ import Stamen from 'ol/source/Stamen';
 import OlOverlay from 'ol/Overlay'
 import OlControl from 'ol/control'
 import OlPixel from 'ol/pixel'
+import * as OlInteraction from 'ol/interaction'
 import OlFeature from 'ol/Feature'
 import OlGeomPoint from 'ol/geom/Point'
 import OlSourceVector from 'ol/source/Vector'
@@ -292,7 +293,7 @@ class PublicMap extends Component {
         });
 
         var vectorSource = new OlSourceVector({
-            features: [newyork, buffalo, tampa, miami, keywest, nashville ,orlando, cleveland, pittsburgh, boston, richmond, washdc, atlanta, stlouis, bigbear, denver, steamboat, amarillo, phoenix, seattle, lasvegas, chicago, neworleans, louisville, lexington, charlotte, tallahassee, baltimore, lakegeorge, watkinsglen, fayetteville, jerseycity, philadelphia, fourcorners, longisland]
+            features: [newyork, buffalo, tampa, miami, keywest, nashville ,orlando, cleveland, pittsburgh, boston, richmond, washdc, atlanta, stlouis, bigbear, denver, steamboat, moab, amarillo, phoenix, seattle, lasvegas, chicago, neworleans, louisville, lexington, charlotte, tallahassee, baltimore, lakegeorge, watkinsglen, fayetteville, jerseycity, philadelphia, fourcorners, longisland]
         });
 
         var vectorSourceNP = new OlSourceVector({
@@ -340,11 +341,46 @@ class PublicMap extends Component {
             view: new OlView({
                 center: fromLonLat([-95.7129, 37.0902]),
                 zoom: 4.5
-            }),
+            })
         });
 
         this.olmap.addLayer(markerVectorLayer);
         this.olmap.addLayer(markerVectorLayerNP);
+
+        var popup = document.createElement("div");
+            popup.id = "EMpopup";
+            document.body.appendChild(popup);
+
+        var overlay = new OlOverlay({
+            element: popup,
+            autoPan: true,
+            autoPanAnimation: {
+                duration: 250
+            }
+        });
+
+        var content = document.createElement("div");
+            popup.appendChild(content);
+
+        var popupShowing = false;
+
+        this.olmap.on('singleclick', (e) => {
+            var clickedMarker = false;
+            this.olmap.forEachFeatureAtPixel(e.pixel, () => {
+                var coordinate = e.coordinate;
+                console.log("Clicked Feature!");
+                clickedMarker = true;
+                content.innerHTML = '<p>Clicked Feature!</p>'
+                overlay.setPosition(coordinate);
+                popupShowing = true;
+            });
+            if(!clickedMarker)
+                console.log("Nothing was clicked!");
+                clickedMarker = false;
+                popupShowing = false;
+            });
+
+        this.olmap.addOverlay(overlay)
 
     }
 
