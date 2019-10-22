@@ -10,6 +10,7 @@ import Stamen from 'ol/source/Stamen';
 import OlOverlay from 'ol/Overlay'
 import OlControl from 'ol/control'
 import OlPixel from 'ol/pixel'
+import * as OlEvent from 'ol/events'
 import * as OlInteraction from 'ol/interaction'
 import OlFeature from 'ol/Feature'
 import OlGeomPoint from 'ol/geom/Point'
@@ -351,6 +352,20 @@ class PublicMap extends Component {
             popup.id = "EMpopup";
             document.body.appendChild(popup);
 
+        var content = document.createElement("div");
+            popup.appendChild(content);
+
+        var popupcloser = document.createElement("a");
+            popupcloser.id = "EMpopup-closer"
+            popupcloser.href = "#"
+            popupcloser.onclick = () => {
+                overlay.setPosition(undefined);
+                popupcloser.blur();
+                console.log("Closing popup!");
+                return false;
+            }
+            popup.appendChild(popupcloser);
+
         var overlay = new OlOverlay({
             element: popup,
             autoPan: true,
@@ -359,10 +374,18 @@ class PublicMap extends Component {
             }
         });
 
-        var content = document.createElement("div");
-            popup.appendChild(content);
-
         var popupShowing = false;
+
+        this.olmap.on('pointermove', (evt) => {
+            var hoverMarker = false;
+            document.getElementById('map').style.cursor = 'default';
+            this.olmap.forEachFeatureAtPixel(evt.pixel, () => {
+                document.getElementById('map').style.cursor = 'pointer';
+                hoverMarker = true;
+            });
+            if(!hoverMarker)
+                hoverMarker = false;
+            });
 
         this.olmap.on('singleclick', (e) => {
             var clickedMarker = false;
