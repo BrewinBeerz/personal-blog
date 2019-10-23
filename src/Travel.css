@@ -15,17 +15,18 @@
 
 #travel-quote {
   text-align: center;
-  font-style: italic;
   margin-top: 40px;
   font-size: 14pt;
   margin-left: 100px;
   margin-right: 100px;
+  font-family: 'Inconsolata', monospace !important;
 }
 
 #travel-author {
   text-align: center;
   font-style: italic;
   font-size: 14pt;
+  font-family: 'Inconsolata', monospace !important;
 }
 
 #travel-title {
@@ -48,6 +49,7 @@
   bottom: 12px;
   left: -50px;
   min-width: 280px;
+  font-family: 'Inconsolata', monospace !important;
 }
 
 #EMpopup:after, #EMpopup:before {

@@ -7,7 +7,6 @@ import Card from "react-bootstrap/Card"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CardImg from "react-bootstrap/CardImg"
 import {
-    faYoutube,
     faFacebook,
     faTwitter,
     faGithub,
@@ -29,9 +28,9 @@ class Home extends Component {
                     <Card.Body>
                         <Card.Title>About Me</Card.Title>
                         <Card.Text>
-                            <p>Hey, I'm Danny! I work in tech. My girlfriend and I just moved from Atlanta, GA to Phoenix, AZ with our mini-zoo of dogs and cats.</p>
-                            <p>Beer, BBQ and Bourbon are life! Nothing beats a relaxing Sunday afternoon with a nice bourbon and a cigar, tending to the  smoker. When we're not at home or with friends, we're out exploring our new surroundings out west! Traveling has been a big part of our lives and it's something I encourage everyone to do!</p>
-                            <p>I built this site so that I could share some of the cool things I've picked up on over the years. From recipes to travel tips, there a little bit of everything here. Enjoy!</p>
+                            <p>Hey, I'm Danny! I work in tech. My girlfriend and I recently moved to Phoenix, AZ.</p>
+                            <p>Beer, BBQ and Bourbon are life! When we're not at home or with friends, we're out exploring our new surroundings out west! Traveling has been a big part of our lives and it's something I encourage everyone to do!</p>
+                            <p>Anyway, I built this site as a web dev project to learn from and so that I could share some of the cool things I've picked up on over the years. From recipes to travel tips, there will be a little bit of everything on here. I hope you enjoy it!</p>
                             <p>P.S. Check out the social links below for more!</p>
                         </Card.Text>
                     </Card.Body>
@@ -46,7 +45,7 @@ class Home extends Component {
                             <a id="links"  href="https://www.twitter.com" className="twitter social">
                                 <FontAwesomeIcon icon={faTwitter} size="1x" />
                             </a>
-                            <a id="links"  href="https://www.github.com" className="soundcloud social">
+                            <a id="links"  href="https://www.soundcloud.com" className="soundcloud social">
                                 <FontAwesomeIcon icon={faSoundcloud} size="1x" />
                             </a>
                             <a id="links"  href="https://www.github.com" className="github social">

@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from "react-bootstrap/Container"
 import Jumbotron from "react-bootstrap/Jumbotron"
 import Navbar from "react-bootstrap/Navbar"
-import NavItem from "react-bootstrap/NavItem"
 import Nav from "react-bootstrap/Nav"
 import {
     Route,
