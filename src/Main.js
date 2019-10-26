@@ -16,6 +16,9 @@ import Photos from "./Photos";
 import Projects from "./Projects";
 import Recipes from "./Recipes";
 import Travel from "./Travel";
+import Arches from "./Arches"
+import Canyonlands from './Canyonlands'
+import GrandCanyon from './GrandCanyon'
 
 
 class Main extends Component {
@@ -63,6 +66,9 @@ class Main extends Component {
                         <Route exact path="/Projects" component={Projects} />
                         <Route exact path="/Recipes" component={Recipes} />
                         <Route exact path="/Travel" component={Travel} />
+                        <Route exact path="/Arches" component={Arches} />
+                        <Route exact path="/Canyonlands" component={Canyonlands} />
+                        <Route exact path="/GrandCanyon" component={GrandCanyon} />
                     </div>
                 </Container>
             </HashRouter>

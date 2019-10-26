@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 import {
-  Route,
-  Link,
-  HashRouter
+  Link
 } from "react-router-dom";
 import Card from "react-bootstrap/Card"
-import Container from "react-bootstrap/Container"
 import CardGroup from "react-bootstrap/CardGroup"
 import './Photos.css'
-import Arches from "./Arches"
-import Canyonlands from './Canyonlands'
-import GrandCanyon from './GrandCanyon'
  
 class Photos extends Component {
   render() {
     return (
-      <HashRouter>
         <div>
             <CardGroup>
               <Card>
@@ -47,14 +40,6 @@ class Photos extends Component {
               </Card>
             </CardGroup>
         </div>
-        <Container>
-          <div className="content">
-              <Route exact path="/Arches" component={Arches} />
-              <Route exact path="/Canyonlands" component={Canyonlands} />
-              <Route exact path="/GrandCanyon" component={GrandCanyon} />
-          </div>
-        </Container>
-      </HashRouter>
     );
   }
 }
