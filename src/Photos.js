@@ -10,6 +10,7 @@ class Photos extends Component {
   render() {
     return (
         <div>
+          <h2>Photos</h2>
             <CardGroup>
               <Card>
               <Link to="/Arches"><Card.Img variant="top" src="/arches_card.jpg"></Card.Img></Link>
