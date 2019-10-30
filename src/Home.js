@@ -19,9 +19,9 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Carousel>
+                <Carousel controls= {false}>
                     <Carousel.Item>
-                        <img className="d-block w-100" src="/IMG_0808.png" alt="First slide" />
+                        <img className="d-block w-100" src="/IMG_0808.png"/>
                     </Carousel.Item>
                 </Carousel>
                 <Card className="text-center">

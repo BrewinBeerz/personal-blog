@@ -1,85 +1,102 @@
 import React, { Component, useState, useCallback } from "react";
-import { render } from "react-dom";
-import Gallery from "react-photo-gallery"
-import Carousel, { Modal, ModalGateway } from "react-images";
 import './Album.css'
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
-
-const images = [
-  './arches_card.jpg',
-  './canyonlands_card.jpg',
-  './grandcanyon_card.jpg',
-];
+import Gallery from 'react-grid-gallery';
 
 const photos = [
   {
     src: './arches_card.jpg',
-    width: 4,
-    height: 3
+    thumbnail: './arches_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 174,
+    caption: "Delicate Arch at Arches National Park"
   },
   {
     src: './canyonlands_card.jpg',
-    width: 3,
-    height: 4
+    thumbnail: './canyonlands_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 212,
+    caption: "Mesa Arch at Canyonlands National Park"
   },
   {
     src: './grandcanyon_card.jpg',
-    width: 4,
-    height: 3
+    thumbnail: './grandcanyon_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 212,
+    caption: "Grand Canyon National Park"
+  },
+  {
+    src: './arches_card.jpg',
+    thumbnail: './arches_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 174,
+    caption: "Delicate Arch at Arches National Park"
   },
   {
     src: './grandcanyon_card.jpg',
-    width: 3,
-    height: 4
+    thumbnail: './grandcanyon_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 212,
+    caption: "Boats (Jeshu John - designerspics.com)"
+  },
+
+  {
+    src: './canyonlands_card.jpg',
+    thumbnail: './canyonlands_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 212
+  },
+  {
+    src: './arches_card.jpg',
+    thumbnail: './arches_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 174,
+    caption: "After Rain (Jeshu John - designerspics.com)"
   },
   {
     src: './canyonlands_card.jpg',
-    width: 3,
-    height: 4
+    thumbnail: './canyonlands_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 212,
+    caption: "Boats (Jeshu John - designerspics.com)"
   },
   {
     src: './grandcanyon_card.jpg',
-    width: 4,
-    height: 3
+    thumbnail: './grandcanyon_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 212
+  },
+  {
+    src: './arches_card.jpg',
+    thumbnail: './arches_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 174,
+    caption: "After Rain (Jeshu John - designerspics.com)"
+  },
+  {
+    src: './canyonlands_card.jpg',
+    thumbnail: './canyonlands_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 212,
+    caption: "Boats (Jeshu John - designerspics.com)"
+  },
+
+  {
+    src: './grandcanyon_card.jpg',
+    thumbnail: './grandcanyon_card.jpg',
+    thumbnailWidth: 720,
+    thumbnailHeight: 212
   }
 ];
 
 class Arches extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      photoIndex: 0,
-      isOpen: false,
-    };
-  }
 
   render() {
-    const { photoIndex, isOpen } = this.state;
-
     return (
       <div>
         <h2>Arches National Park</h2>
-        <Gallery photos={photos} direction={"column"} onClick={() => this.setState({ isOpen: true })}/>
-        {isOpen && (
-          <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={() => this.setState({ isOpen: false })}
-            onMovePrevRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
-              })
-            }
-            onMoveNextRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
-              })
-            }
-          />
-        )}
+        <Gallery 
+        images = { photos }
+        enableImageSelection = { false }/>      
       </div>
     );
   }
