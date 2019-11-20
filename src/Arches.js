@@ -85,6 +85,13 @@ const photos = [
     thumbnail: './grandcanyon_card.jpg',
     thumbnailWidth: 720,
     thumbnailHeight: 212
+  },
+  {
+    src: './arches_card.jpg',
+    thumbnail: './arches_card.jpg',
+    thumbnailWidth: 320,
+    thumbnailHeight: 174,
+    caption: "After Rain (Jeshu John - designerspics.com)"
   }
 ];
 

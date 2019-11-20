@@ -271,6 +271,28 @@ class PublicMap extends Component {
             name: 'Long Island, NY'
         });
 
+        var sanfrancisco = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-122.4194,37.7749])
+            ),
+            name: 'San Francisco, CA'
+        });
+
+        var tahoe = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-119.9772,38.9399])
+            ),
+            name: 'South Lake Tahoe, CA'
+        });
+
+
+        var napa = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-122.2654,38.5025])
+            ),
+            name: 'Napa Valley, CA'
+        });
+
         var arches = new OlFeature({
             geometry: new OlGeomPoint(
             fromLonLat([-109.5925,38.7331])
@@ -334,12 +356,19 @@ class PublicMap extends Component {
             name: 'Zion National Park, UT'
         });
 
+        var yosemite = new OlFeature({
+            geometry: new OlGeomPoint(
+            fromLonLat([-119.5383,37.8651])
+            ),
+            name: 'Yosemite National Park, CA'
+        });
+
         var vectorSource = new OlSourceVector({
-            features: [newyork, buffalo, tampa, miami, keywest, nashville ,orlando, cleveland, pittsburgh, boston, richmond, washdc, atlanta, stlouis, bigbear, denver, steamboat, moab, amarillo, seattle, lasvegas, chicago, neworleans, louisville, lexington, charlotte, tallahassee, baltimore, lakegeorge, watkinsglen, fayetteville, jerseycity, philadelphia, fourcorners, longisland]
+            features: [newyork, buffalo, tampa, miami, keywest, nashville ,orlando, cleveland, pittsburgh, boston, richmond, washdc, atlanta, stlouis, bigbear, denver, steamboat, moab, amarillo, seattle, lasvegas, chicago, neworleans, louisville, lexington, charlotte, tallahassee, baltimore, lakegeorge, watkinsglen, fayetteville, jerseycity, philadelphia, fourcorners, longisland, sanfrancisco, tahoe, napa]
         });
 
         var vectorSourceNP = new OlSourceVector({
-            features: [arches, brycecanyon, canyonlands, grandcanyon, joshuatree, mtranier, rockymountain, saguaro, zion]
+            features: [arches, brycecanyon, canyonlands, grandcanyon, joshuatree, mtranier, rockymountain, saguaro, yosemite, zion]
         })
 
         var vectorSourceHome = new OlSourceVector({
