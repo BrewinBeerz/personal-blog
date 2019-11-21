@@ -297,7 +297,9 @@ class PublicMap extends Component {
             geometry: new OlGeomPoint(
             fromLonLat([-109.5925,38.7331])
             ),
-            name: 'Arches National Park, UT'
+            name: 'Arches National Park, UT',
+            image: './arches_card.jpg',
+            album: '/Arches'
         })
 
         var brycecanyon = new OlFeature({
@@ -443,6 +445,12 @@ class PublicMap extends Component {
         var content = document.createElement("div");
             popup.appendChild(content);
 
+        var link = document.createElement("a")
+            popup.appendChild(link);
+
+        var image = document.createElement("img")
+            popup.appendChild(image);
+
         var popupcloser = document.createElement("a");
             popupcloser.id = "EMpopup-closer"
             popupcloser.href = "#"
@@ -480,9 +488,12 @@ class PublicMap extends Component {
             this.olmap.forEachFeatureAtPixel(e.pixel, (vectorSourceNP) => {
                 var coordinate = e.coordinate;
                 var featureName = vectorSourceNP.get('name')
+                var featureImage = vectorSourceNP.get('image')
+                var albumLink = vectorSourceNP.get('album')
                 console.log("Clicked Feature!");
                 clickedMarker = true;
                 content.innerHTML = featureName;
+                link.innerHTML = '<img '+ 'src='+ featureImage + ' width=200' + '></img>'
                 overlay.setPosition(coordinate);
                 popupShowing = true;
             });
