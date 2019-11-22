@@ -445,8 +445,6 @@ class PublicMap extends Component {
         var content = document.createElement("div");
             popup.appendChild(content);
 
-        var link = document.createElement("a")
-            popup.appendChild(link);
 
         var image = document.createElement("img")
             popup.appendChild(image);
@@ -493,7 +491,8 @@ class PublicMap extends Component {
                 console.log("Clicked Feature!");
                 clickedMarker = true;
                 content.innerHTML = featureName;
-                link.innerHTML = '<img '+ 'src='+ featureImage + ' width=200' + '></img>'
+                image.width = 200;
+                image.src = featureImage;
                 overlay.setPosition(coordinate);
                 popupShowing = true;
             });

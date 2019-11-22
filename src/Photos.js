@@ -16,7 +16,7 @@ class Photos extends Component {
             <Card>
               <Link to="/Arches"><Card.Img variant="top" src="/arches_card.jpg"/></Link>
               <Card.Body>
-              <Card.Title>Arches National Park</Card.Title>
+              <Link to="/Arches"><Card.Title>Arches National Park</Card.Title></Link>
               <Card.Text>
                 Photos taken during our trip to Arches National Park in September 2019.
               </Card.Text>
