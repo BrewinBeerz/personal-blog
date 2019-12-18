@@ -1,0 +1,11 @@
+{
+  "name": "personal-blog-backend",
+  "version": "1.0.0",
+  "description": "Backend services for Personal-Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danny Squitin",
+  "license": "ISC"
+}
