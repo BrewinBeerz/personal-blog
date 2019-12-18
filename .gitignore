@@ -12,6 +12,8 @@ personal-blog/coverage
 personal-blog/build
 
 # misc
+.DS_Store
+personal-blog-backend/.DS_Store
 personal-blog/.DS_Store
 personal-blog/.env.local
 personal-blog/.env.development.local
