@@ -34,7 +34,7 @@ class Home extends Component {
                             <p>P.S. Check out the social links below for more!</p>
                         </Card.Text>
                     </Card.Body>
-                    <CardImg className="ml-auto mr-auto" src="/IMG_4492.png" roundedCircle />
+                    <CardImg className="ml-auto mr-auto" src="/laketahoe.jpg" roundedCircle />
                 </Card>
                 <Card id="social" className="text-center">
                     <Card.Body>
