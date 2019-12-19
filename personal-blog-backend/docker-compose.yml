@@ -5,6 +5,8 @@ services:
   mongo:
     image: mongo
     restart: always
+    ports:
+      - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: dsquit
       MONGO_INITDB_ROOT_PASSWORD: personal
@@ -14,6 +16,8 @@ services:
     restart: always
     ports:
       - 8081:8081
+    links:
+      - mongo:mongo
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: dsquit
       ME_CONFIG_MONGODB_ADMINPASSWORD: personal
