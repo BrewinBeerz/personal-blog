@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React from 'react';
 import Main from "./Main"
 import './Main.css';
 import ReactDOM from 'react-dom';

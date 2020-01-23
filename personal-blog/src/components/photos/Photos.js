@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import {
   Link
 } from "react-router-dom";
-import Card from "react-bootstrap/Card"
-import CardGroup from "react-bootstrap/CardGroup"
-import CardDeck from "react-bootstrap/CardDeck"
+import { Card, CardDeck } from "react-bootstrap"
 import './Photos.css'
  
 class Photos extends Component {
