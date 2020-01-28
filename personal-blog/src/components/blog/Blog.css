@@ -1,0 +1,30 @@
+.blog-card-deck{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.blog-card {    
+    display: inline-block !important;
+    min-width: 400px !important;
+    max-width: 400px !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 0px !important;
+}
+
+.blog-card-body {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.blog-card-img {
+    width: 350px !important;
+    height: 200px !important;
+}
+
+.blog-card-text {
+    padding-bottom: 10px !important;
+}
+
+.text-muted{
+    padding-bottom: 200px !important;
+}

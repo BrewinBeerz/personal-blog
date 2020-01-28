@@ -1,14 +1,48 @@
-import React, { Component } from "react";
- 
-class Blog extends Component {
-  render() {
+import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../blog/Blog.css";
+import Axios from "axios";
+import { Card, CardDeck } from "react-bootstrap";
+
+export default function Blog() {
+  const [post, setPost] = useState([]);
+
+  useEffect(() => {
+    let wordpress = Axios.get(
+      "http://localhost:8000/wp-json/wp/v2/posts"
+    ).then(response => setPost(response.data));
+  }, []);
+
+  function Post({ post, index }) {
     return (
-      <div>
-        <h2>Blog</h2>
-        <p>Blah blah blah blah blah</p>
-      </div>
+      <Card className="blog-card">
+        <Card.Img
+          variant="top"
+          src="/arches_card.jpg"
+          className="blog-card-image"></Card.Img>
+        <Card.Body className="blog-card-body">
+          <Card.Title>{post.title.rendered}</Card.Title>
+          <Card.Text className="blog-card-text">
+            <p dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer className="blog-card-footer">
+          <small className="text-muted">{"Last Updated: " + post.date}</small>
+        </Card.Footer>
+      </Card>
     );
   }
+
+  return (
+    <div>
+      <h2>Blog</h2>
+      <CardDeck className="blog-card-deck">
+        {post
+          .sort((a, b) => b.id - a.id)
+          .map((post, index) => (
+            <Post key={index} index={index} post={post}></Post>
+          ))}
+      </CardDeck>
+    </div>
+  );
 }
- 
-export default Blog;
