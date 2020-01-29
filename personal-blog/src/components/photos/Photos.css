@@ -1,18 +1,31 @@
-/* .card-title {
-    text-decoration: underline !important;
+.photo-card-deck{
+    display: flex !important;
+    justify-content: center !important;
 }
 
-.card-body {
+.photo-card {    
+    display: inline-block !important;
+    min-width: 400px !important;
+    max-width: 400px !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 0px !important;
+}
+
+.photo-card-body {
     margin-left: auto !important;
     margin-right: auto !important;
+    height: 125px !important;
 }
 
-.card-text {
-    padding-bottom: 10px !important;
-
-}
-
-.card-img-top {
+.photo-card-img {
     width: 350px !important;
     height: 200px !important;
-} */
+}
+
+.photo-card-text {
+    padding-bottom: 10px !important;
+}
+
+.text-muted{
+    padding-bottom: 200px !important;
+}

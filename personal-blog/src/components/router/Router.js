@@ -6,9 +6,9 @@ import Photos from "../photos/Photos";
 import Projects from "../projects/Projects";
 import Recipes from "../recipes/Recipes";
 import Travel from "../travel/Travel";
-import Arches from "../photos/Arches";
-import Canyonlands from "../photos/Canyonlands";
-import GrandCanyon from "../photos/GrandCanyon";
+import Arches from "../photos/albums/Arches";
+import Canyonlands from "../photos/albums/Canyonlands";
+import GrandCanyon from "../photos/albums/GrandCanyon";
 
 export default function Router() {
   return (

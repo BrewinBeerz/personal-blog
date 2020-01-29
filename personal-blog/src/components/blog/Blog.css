@@ -14,6 +14,7 @@
 .blog-card-body {
     margin-left: auto !important;
     margin-right: auto !important;
+    height: 125px !important;
 }
 
 .blog-card-img {

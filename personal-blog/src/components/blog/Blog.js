@@ -14,6 +14,11 @@ export default function Blog() {
   }, []);
 
   function Post({ post, index }) {
+
+    let title = post.title.rendered
+    let excerpt = post.excerpt.rendered.toString();
+    let date = new Date(post.date).toDateString();
+
     return (
       <Card className="blog-card">
         <Card.Img
@@ -21,13 +26,13 @@ export default function Blog() {
           src="/arches_card.jpg"
           className="blog-card-image"></Card.Img>
         <Card.Body className="blog-card-body">
-          <Card.Title>{post.title.rendered}</Card.Title>
+          <Card.Title>{title}</Card.Title>
           <Card.Text className="blog-card-text">
             <p dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
           </Card.Text>
         </Card.Body>
         <Card.Footer className="blog-card-footer">
-          <small className="text-muted">{"Last Updated: " + post.date}</small>
+          <small className="text-muted">{"Last Updated: " + date}</small>
         </Card.Footer>
       </Card>
     );
