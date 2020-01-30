@@ -3,9 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../blog/Blog.css";
 import Axios from "axios";
 import { Card, CardDeck } from "react-bootstrap";
+import ModalComp from "../modal/ModalComp";
+import useModal from "../modal/useModal";
+import { Link } from "react-router-dom";
 
 export default function Blog() {
   const [post, setPost] = useState([]);
+  const { isShowing, toggle } = useModal();
+
+  console.log(isShowing);
 
   useEffect(() => {
     let wordpress = Axios.get(
@@ -14,21 +20,25 @@ export default function Blog() {
   }, []);
 
   function Post({ post, index }) {
-
-    let title = post.title.rendered
+    let title = post.title.rendered;
     let excerpt = post.excerpt.rendered.toString();
     let date = new Date(post.date).toDateString();
 
     return (
       <Card className="blog-card">
-        <Card.Img
-          variant="top"
-          src="/arches_card.jpg"
-          className="blog-card-image"></Card.Img>
+        <Link onClick={toggle}>
+          <Card.Img
+            variant="top"
+            src="/arches_card.jpg"
+            className="blog-card-image"
+          ></Card.Img>
+        </Link>
         <Card.Body className="blog-card-body">
-          <Card.Title>{title}</Card.Title>
+          <Card.Title>
+            <p dangerouslySetInnerHTML={{ __html: title }} />
+          </Card.Title>
           <Card.Text className="blog-card-text">
-            <p dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+            <p dangerouslySetInnerHTML={{ __html: excerpt }} />
           </Card.Text>
         </Card.Body>
         <Card.Footer className="blog-card-footer">
@@ -41,6 +51,7 @@ export default function Blog() {
   return (
     <div>
       <h2>Blog</h2>
+      <ModalComp isShowing={isShowing} hide={toggle} />
       <CardDeck className="blog-card-deck">
         {post
           .sort((a, b) => b.id - a.id)
