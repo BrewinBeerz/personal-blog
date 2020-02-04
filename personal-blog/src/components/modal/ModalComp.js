@@ -6,23 +6,22 @@ const ModalComp = ({ isShowing, hide }) =>
   isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
-          <Modal.Dialog>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal title</Modal.Title>
+          <Modal show={isShowing} onHide={HTMLHeadingElement} animation={false} size="lg">
+            <Modal.Header closeButton onClick={hide}>
+              <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
-
             <Modal.Body>
-              <p>Modal body text goes here.</p>
+              Woohoo, you're reading this text in a modal!
             </Modal.Body>
-
             <Modal.Footer>
-              <Button variant="secondary">Close</Button>
-              <Button variant="primary">Save changes</Button>
+              <Button variant="secondary" onClick={hide}>
+                Close
+              </Button>
             </Modal.Footer>
-          </Modal.Dialog>
+          </Modal>
         </React.Fragment>,
         document.body
-      )
+    )
     : null;
 
 export default ModalComp;

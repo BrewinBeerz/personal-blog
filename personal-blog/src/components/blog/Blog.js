@@ -6,12 +6,11 @@ import { Card, CardDeck } from "react-bootstrap";
 import ModalComp from "../modal/ModalComp";
 import useModal from "../modal/useModal";
 import { Link } from "react-router-dom";
+import BlogPost from "../blog/blogPost/BlogPost"
 
 export default function Blog() {
   const [post, setPost] = useState([]);
   const { isShowing, toggle } = useModal();
-
-  console.log(isShowing);
 
   useEffect(() => {
     let wordpress = Axios.get(
@@ -19,14 +18,19 @@ export default function Blog() {
     ).then(response => setPost(response.data));
   }, []);
 
+
   function Post({ post, index }) {
     let title = post.title.rendered;
     let excerpt = post.excerpt.rendered.toString();
     let date = new Date(post.date).toDateString();
+    let content = post.title.rendered;
 
     return (
       <Card className="blog-card">
-        <Link onClick={toggle}>
+        <Link to={{
+          pathname: "/Blog-post",
+          state: post
+        }}>
           <Card.Img
             variant="top"
             src="/arches_card.jpg"
@@ -47,6 +51,8 @@ export default function Blog() {
       </Card>
     );
   }
+
+
 
   return (
     <div>
