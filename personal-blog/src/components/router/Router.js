@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Home from "../home/Home";
 import Blog from "../blog/Blog";
-import BlogPost from "../blog/blogPost/BlogPost"
+import PostDetails from "../blog/PostDetails";
 import Photos from "../photos/Photos";
 import Projects from "../projects/Projects";
 import Recipes from "../recipes/Recipes";
@@ -15,15 +15,15 @@ export default function Router() {
   return (
     <div className="content">
       <Route exact path="/" component={Home} />
-      <Route exact path="/Blog" component={Blog} />
-      <Route exact path="/Blog-Post" component={BlogPost}/>
-      <Route exact path="/Photos" component={Photos} />
-      <Route exact path="/Projects" component={Projects} />
-      <Route exact path="/Recipes" component={Recipes} />
-      <Route exact path="/Travel" component={Travel} />
-      <Route exact path="/Arches" component={Arches} />
-      <Route exact path="/Canyonlands" component={Canyonlands} />
-      <Route exact path="/GrandCanyon" component={GrandCanyon} />
+      <Route exact path="/blog" component={Blog} />
+      <Route exact path="/blog/postdetails/:id" component={PostDetails}/>
+      <Route exact path="/photos" component={Photos} />
+      <Route exact path="/projects" component={Projects} />
+      <Route exact path="/recipes" component={Recipes} />
+      <Route exact path="/travel" component={Travel} />
+      <Route exact path="/arches" component={Arches} />
+      <Route exact path="/canyonlands" component={Canyonlands} />
+      <Route exact path="/grandcanyon" component={GrandCanyon} />
     </div>
   );
 }

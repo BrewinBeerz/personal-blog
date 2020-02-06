@@ -20,27 +20,27 @@ export default function Header() {
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link>
-                        <NavLink to="/Blog">Blog</NavLink>
+                        <NavLink to="/blog">Blog</NavLink>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link>
-                        <NavLink to="/Photos">Photos</NavLink>
+                        <NavLink to="/photos">Photos</NavLink>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link>
-                        <NavLink to="/Projects">Projects</NavLink>
+                        <NavLink to="/projects">Projects</NavLink>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link>
-                        <NavLink to="/Recipes">Recipes</NavLink>
+                        <NavLink to="/recipes">Recipes</NavLink>
                       </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link>
-                        <NavLink to="/Travel">Travel</NavLink>
+                        <NavLink to="/travel">Travel</NavLink>
                       </Nav.Link>
                     </Nav.Item>
                   </Nav>
