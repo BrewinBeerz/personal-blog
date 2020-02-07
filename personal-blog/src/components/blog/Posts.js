@@ -9,7 +9,7 @@ export default function Posts(props) {
   let title = post.title.rendered;
   let excerpt = post.excerpt.rendered.toString();
   let date = new Date(post.date).toDateString();
-
+  
   return (
     <Card className="blog-card">
       <Link to={`/blog/postdetails/${id}`}>

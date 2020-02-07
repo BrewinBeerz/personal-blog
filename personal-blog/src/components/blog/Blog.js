@@ -16,7 +16,7 @@ export default function Blog() {
 
   return (
     <div>
-      <h2>Blog</h2>
+      <h2 style={{paddingBottom: '20px'}}>Blog</h2>
       <CardDeck className="blog-card-deck">
         {post
           .sort((a, b) => b.id - a.id)
