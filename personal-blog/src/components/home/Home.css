@@ -1,29 +1,24 @@
-.carousel-inner {
-    border-radius: 10px !important;
-}
-
-.card {
+.text-center {
     font-family: 'Inconsolata', monospace !important;
     padding-bottom: 40px !important;
+    border-top: 0px;
 }
 
-.card-title {
-    text-decoration: underline !important;
-}
-
-.card-body {
+#intro-body {
     margin-left: 125px !important;
     margin-right: 125px !important;
+    padding-bottom: 0px !important;
 }
 
-.card-text {
+#intro-text {
+    font-size: 15pt !important;
+}
+
+#intro-image {
+    width: 50% !important;
+    border-radius: 3% !important;
+    padding-top: 10px !important;
     padding-bottom: 10px !important;
-
-}
-
-.card-img {
-    width: 30% !important;
-    border-radius: 50% !important;
 
 }
 

@@ -6,7 +6,7 @@ import "./Photos.css";
 export default function Photos() {
   return (
     <div>
-      <h2 style={{paddingBottom: '20px'}}>Photos</h2>
+      <h2 style={{paddingBottom: '20px', paddingTop: '20px'}}>Photos</h2>
       <CardDeck className="photo-card-deck">
         <Card className="photo-card">
           <Link to="/Arches">

@@ -17,9 +17,10 @@
     height: 125px !important;
 }
 
-.blog-card-img {
-    width: 350px !important;
-    height: 200px !important;
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
 }
 
 .blog-card-text {

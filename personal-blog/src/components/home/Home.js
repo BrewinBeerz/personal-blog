@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Carousel, Card, CardImg } from 'react-bootstrap'
+import { Container, Carousel, Card, CardImg } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -14,39 +14,21 @@ import {
 class Home extends Component {
   render() {
     return (
-      <div>
-        <Container>
-          <Carousel controls={false}>
-            <Carousel.Item>
-              <img className="d-block w-100" src="/IMG_0808.png" />
-            </Carousel.Item>
-          </Carousel>
+      <div>          
           <Card className="text-center">
-            <Card.Body>
-              <Card.Title>About Me</Card.Title>
-              <Card.Text>
+            <Card.Body id="intro-body">
+              <Card.Text id="intro-text">
+                <h2 style={{fontWeight: 'bold'}}>{'> Hello World'}</h2>
                 <p>
-                  Hey, I'm Danny! I work in tech. My fiance and I recently moved
-                  to Phoenix, AZ.
+                  Software Engineer. Dog & Cat Dad. Beer, bourbon and BBQ
+                  enthusiast. Currently residing in Phoenix, AZ.
                 </p>
-                <p>
-                  Beer, BBQ and Bourbon are life! When we're not at home or with
-                  friends, we're out exploring our new surroundings out west!
-                  Traveling has been a big part of our lives and it's something
-                  I encourage everyone to do!
-                </p>
-                <p>
-                  Anyway, I built this site as a web dev project to learn from
-                  and so that I could share some of the cool things I've picked
-                  up on over the years. From recipes to travel tips, there will
-                  be a little bit of everything on here. I hope you enjoy it!
-                </p>
-                <p>P.S. Check out the social links below for more!</p>
               </Card.Text>
             </Card.Body>
             <CardImg
               className="ml-auto mr-auto"
-              src="/laketahoe.jpg"
+              id="intro-image"
+              src="./intro_photo.jpg"
               roundedCircle
             />
           </Card>
@@ -55,43 +37,47 @@ class Home extends Component {
               <Card.Title>
                 <a
                   id="links"
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/danny.squitin"
                   className="facebook social"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faFacebook} size="1x" />
                 </a>
                 <a
                   id="links"
-                  href="https://www.twitter.com"
+                  href="https://twitter.com/DSquitin"
                   className="twitter social"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faTwitter} size="1x" />
                 </a>
                 <a
                   id="links"
-                  href="https://www.soundcloud.com"
+                  href="https://soundcloud.com/dnzo"
                   className="soundcloud social"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faSoundcloud} size="1x" />
                 </a>
                 <a
                   id="links"
-                  href="https://www.github.com"
+                  href="https://github.com/BrewinBeerz"
                   className="github social"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faGithub} size="1x" />
                 </a>
                 <a
                   id="links"
-                  href="https://www.flckr.com"
+                  href="https://www.flickr.com/photos/156696884@N02/"
                   className="flickr social"
+                  target="_blank"
                 >
                   <FontAwesomeIcon icon={faFlickr} size="1x" />
                 </a>
               </Card.Title>
             </Card.Body>
           </Card>
-        </Container>
       </div>
     );
   }

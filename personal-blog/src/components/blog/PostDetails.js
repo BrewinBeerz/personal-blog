@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import axios from "axios";
-import './PostDetails.css'
 
 export default function PostDetails() {
   const [details, setDetails] = useState([]);
@@ -10,7 +9,7 @@ export default function PostDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/wp-json/wp/v2/posts/${id}`)
+      .get(`http://localhost:8000/wp-json/wp/v2/posts/${id}?_embed`)
       .then(response => setDetails(response.data));
   }, []);
 

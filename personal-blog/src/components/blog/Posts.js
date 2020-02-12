@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
 export default function Posts(props) {
@@ -9,15 +9,27 @@ export default function Posts(props) {
   let title = post.title.rendered;
   let excerpt = post.excerpt.rendered.toString();
   let date = new Date(post.date).toDateString();
-  
+
+  let featuredImage;
+  let getFeaturedImage = () => {
+    if(post._embedded['wp:featuredmedia']){
+      return featuredImage = post._embedded['wp:featuredmedia'][0].source_url
+    }
+    else {
+      return featuredImage = ''
+    }
+  }
+  getFeaturedImage();
+  console.log(featuredImage)
+
   return (
     <Card className="blog-card">
       <Link to={`/blog/postdetails/${id}`}>
-      <Card.Img
-        variant="top"
-        src="/arches_card.jpg"
-        className="blog-card-image"
-      ></Card.Img>
+        <Card.Img
+          variant="top"
+          src={featuredImage}
+          className="blog-card-image"
+        ></Card.Img>
       </Link>
       <Card.Body className="blog-card-body">
         <Card.Title>
