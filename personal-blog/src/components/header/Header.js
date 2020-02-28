@@ -1,51 +1,78 @@
-import React from 'react'
-import { Jumbotron, Container, Navbar, Nav } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
-    return (
-        <div>
-          <Jumbotron fluid>
-            <Container>
-              <Navbar collapseOnSelect>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                  <Nav className="ml-auto mr-auto">
-                    <Nav.Item>
-                      <Nav.Link>
-                        <NavLink to="/">Home</NavLink>
-                      </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link>
-                        <NavLink to="/blog">Blog</NavLink>
-                      </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link>
-                        <NavLink to="/photos">Photos</NavLink>
-                      </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link>
-                        <NavLink to="/projects">Projects</NavLink>
-                      </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link>
-                        <NavLink to="/recipes">Recipes</NavLink>
-                      </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link>
-                        <NavLink to="/travel">Travel</NavLink>
-                      </Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                </Navbar.Collapse>
-              </Navbar>
-            </Container>
-          </Jumbotron>
-        </div>
-    )
+  return (
+    <div>
+      <Navbar collapseOnSelect>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto mr-auto">
+            <Nav.Item>
+              <Nav.Link>
+                <NavLink
+                  to="/"
+                  exact
+                  activeClassName="navbar__link--active"
+                  className="navbar__link">
+                  HOME
+                </NavLink>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link>
+                <NavLink
+                  to="/blog"
+                  activeClassName="navbar__link--active"
+                  className="navbar__link">
+                  BLOG
+                </NavLink>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link>
+                <NavLink
+                  to="/photos"
+                  activeClassName="navbar__link--active"
+                  className="navbar__link">
+                  PHOTOS
+                </NavLink>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link>
+                <NavLink
+                  to="/projects"
+                  activeClassName="navbar__link--active"
+                  className="navbar__link">
+                  PROJECTS
+                </NavLink>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link>
+                <NavLink
+                  to="/recipes"
+                  activeClassName="navbar__link--active"
+                  className="navbar__link">
+                  RECIPES
+                </NavLink>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link>
+                <NavLink
+                  to="/travel"
+                  activeClassName="navbar__link--active"
+                  className="navbar__link">
+                  TRAVEL
+                </NavLink>
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+  );
 }

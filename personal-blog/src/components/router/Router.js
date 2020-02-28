@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "../home/Home";
 import Blog from "../blog/Blog";
 import PostDetails from "../blog/PostDetails";
@@ -13,17 +13,17 @@ import GrandCanyon from "../photos/albums/GrandCanyon";
 
 export default function Router() {
   return (
-    <div className="content">
-      <Route exact path="/" component={Home} />
-      <Route exact path="/blog" component={Blog} />
-      <Route exact path="/blog/postdetails/:id" component={PostDetails}/>
-      <Route exact path="/photos" component={Photos} />
-      <Route exact path="/projects" component={Projects} />
-      <Route exact path="/recipes" component={Recipes} />
-      <Route exact path="/travel" component={Travel} />
-      <Route exact path="/arches" component={Arches} />
-      <Route exact path="/canyonlands" component={Canyonlands} />
-      <Route exact path="/grandcanyon" component={GrandCanyon} />
-    </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/postdetails/:id" component={PostDetails} />
+        <Route path="/photos" component={Photos} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/recipes" component={Recipes} />
+        <Route path="/travel" component={Travel} />
+        <Route path="/arches" component={Arches} />
+        <Route path="/canyonlands" component={Canyonlands} />
+        <Route path="/grandcanyon" component={GrandCanyon} />
+      </Switch>
   );
 }
