@@ -1,16 +1,16 @@
 .ol-attribution {
-    position: absolute !important;
-    bottom: 0px !important;
-    right: 10px !important;
-    font-size: 5pt !important;
+  position: absolute !important;
+  bottom: 0px !important;
+  right: 10px !important;
+  font-size: 5pt !important;
 }
 
 .ol-viewport {
-    border-radius: 10px !important;
+  border-radius: 10px !important;
 }
 
 #travel-description {
-    padding-top: 15px !important;
+  padding-top: 15px !important;
 }
 
 #travel-quote {
@@ -19,14 +19,16 @@
   font-size: 14pt;
   margin-left: 100px;
   margin-right: 100px;
-  font-family: 'Inconsolata', monospace !important;
+  color: white;
+  font-family: Montserrat;
 }
 
 #travel-author {
   text-align: center;
   font-style: italic;
   font-size: 14pt;
-  font-family: 'Inconsolata', monospace !important;
+  color: white;
+  font-family: Montserrat;
 }
 
 #travel-title {
@@ -41,18 +43,19 @@
 #EMpopup {
   position: absolute;
   background-color: white;
-  -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
-  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
   padding: 15px;
   border-radius: 10px;
   border: 1px solid #cccccc;
   bottom: 12px;
   left: -50px;
   min-width: 280px;
-  font-family: 'Inconsolata', monospace !important;
+  font-family: Montserrat !important;
 }
 
-#EMpopup:after, #EMpopup:before {
+#EMpopup:after,
+#EMpopup:before {
   top: 100%;
   border: solid transparent;
   content: " ";

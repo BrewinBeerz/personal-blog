@@ -19,7 +19,7 @@ export default function PostDetails() {
 
   return (
     <div> 
-      <div style={{ marginTop: "30px", fontFamily: "Inconsolata" }}>
+      <div style={{ marginTop: "30px", fontFamily: "Montserrat" }}>
         <h2
           style={{ textAlign: "left" }}
           dangerouslySetInnerHTML={{

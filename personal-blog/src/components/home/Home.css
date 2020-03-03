@@ -1,31 +1,61 @@
-.text-center {
-    font-family: 'Inconsolata', monospace !important;
-    padding-bottom: 40px !important;
-    border-top: 0px;
+.home {
+  display: flex;
+  flex: 1 100%;
 }
 
-#intro-body {
-    margin-left: 125px !important;
-    margin-right: 125px !important;
-    padding-bottom: 0px !important;
+.home-left {
+  height: 100%;
+  width: 50%;
+  color: black;
+  background: #eeeeee;
+  min-height: 500px;
 }
 
-#intro-text {
-    font-size: 15pt !important;
+.home-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  color: white;
+  background: #1a1e1b;
+  font-family: Montserrat !important;
+  text-align: center;
+  padding: 40px 40px;
 }
 
-#intro-image {
-    width: 50% !important;
-    border-radius: 3% !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-
+.home-right > h1 {
+  color: white;
+  font-family: Montserrat !important;
 }
 
-#links {
-    padding:20px !important;
+.home-right > h4 {
+  color: white;
+  font-family: Montserrat !important;
 }
 
-#social {
-    padding: 20px !important;
+.home-footer {
+    padding-top: 100px;
+    padding-bottom: 0px;
+}
+
+.home-footer > a {
+    padding: 20px;
+    color: #727350;
+}
+
+@media screen and (max-width: 750px) {
+  .home {
+    flex-direction: column;
+  }
+
+  .home-left {
+    width: auto;
+    min-height: 200px;
+  }
+
+  .home-right {
+    width: auto;
+    height: auto;
+    background: #1a1e1b;
+  }
 }

@@ -1,32 +1,32 @@
-.blog-card-deck{
-    display: flex !important;
-    justify-content: center !important;
+.blog-card-deck {
+  display: flex !important;
+  justify-content: center !important;
 }
 
-.blog-card {    
-    display: inline-block !important;
-    min-width: 400px !important;
-    max-width: 400px !important;
-    margin-bottom: 30px !important;
-    padding-bottom: 0px !important;
+.blog-card {
+  display: inline-block !important;
+  min-width: 400px !important;
+  max-width: 400px !important;
+  margin-bottom: 30px !important;
+  padding-bottom: 0px !important;
 }
 
 .blog-card-body {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    height: 125px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  height: 125px !important;
 }
 
 .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
 }
 
 .blog-card-text {
-    padding-bottom: 10px !important;
+  padding-bottom: 10px !important;
 }
 
-.text-muted{
-    padding-bottom: 200px !important;
+.text-muted {
+  padding-bottom: 200px !important;
 }

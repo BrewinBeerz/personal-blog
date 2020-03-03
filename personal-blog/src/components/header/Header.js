@@ -40,7 +40,7 @@ export default function Header() {
                 </NavLink>
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link>
                 <NavLink
                   to="/projects"
@@ -59,7 +59,7 @@ export default function Header() {
                   RECIPES
                 </NavLink>
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
             <Nav.Item>
               <Nav.Link>
                 <NavLink

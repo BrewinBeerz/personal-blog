@@ -11,9 +11,7 @@ class Main extends Component {
     return (
       <HashRouter>
         <Header/>
-        <Container>
           <Router />
-        </Container>
       </HashRouter>
     );
   }

@@ -1,25 +1,37 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata|Montserrat&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black !important;
+}
+
+h2 {
+  font-family: Montserrat !important;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
 .navbar {
-    background-color: black;
-    font-weight: bold !important;
-    font-size: 12pt;
+  background-color: black;
+  font-weight: bold !important;
+  font-size: 12pt;
 }
 
 .navbar__link {
-    display: block;
-    padding: .5rem 1rem;
-    font-family: Montserrat !important;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: .3em;
-    text-indent: .3em;
-    color: white !important;
-    border-bottom: 3px solid transparent;
-  }
-  
-  .navbar__link--active {
-    border-bottom: 3px solid #679a40;
-    transition: border-bottom .5s ease-in-out;
-  }
+  display: block;
+  padding: 0.5rem 1rem;
+  font-family: Montserrat !important;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  color: white !important;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar__link--active {
+  border-bottom: 3px solid #727350;
+  transition: border-bottom 0.5s ease-in-out;
+}
