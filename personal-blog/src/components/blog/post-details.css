@@ -1,0 +1,23 @@
+.post-container {
+    font-family: Montserrat;
+    color: white;
+}
+
+.post {
+    margin-top: 30px;
+}
+
+.post > h6 {
+    text-align: center;
+}
+
+.post > h5 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+hr {
+    border-top: 1px solid #727350;
+    width: 40%;
+}

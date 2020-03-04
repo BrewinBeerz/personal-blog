@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Container } from 'react-bootstrap';
 import { useParams, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import './post-details.css'
 import axios from "axios";
 
 export default function PostDetails() {
@@ -9,7 +11,7 @@ export default function PostDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/wp-json/wp/v2/posts/${id}?_embed`)
+      .get(`/api/posts/details/${id}`)
       .then(response => setDetails(response.data));
   }, []);
 
@@ -18,23 +20,23 @@ export default function PostDetails() {
   let blogDate = new Date(date).toDateString();
 
   return (
-    <div> 
-      <div style={{ marginTop: "30px", fontFamily: "Montserrat" }}>
+    <Container className="post-container"> 
+      <div className="post">
         <h2
-          style={{ textAlign: "left" }}
           dangerouslySetInnerHTML={{
             __html: details.title ? details.title.rendered : "Loading..."
           }}
         />
         <h6>{blogDate}</h6>
-        <br />
-        <h5 style={{paddingBottom: '20px'}}
+        <hr/>
+        <br/>
+        <h5
           dangerouslySetInnerHTML={{
             __html: details.content ? details.content.rendered : "Loading..."
           }}
         />
       </div>
-      <Link to='/blog'><Button variant="outline-dark" className="back-button" style={{margin: '0 auto', display: 'block'}}>Back</Button></Link>
-    </div>
+      <Link to='/blog'><Button variant="outline-light" className="back-button" style={{margin: '0 auto', display: 'block'}}>Back</Button></Link>
+    </Container>
   );
 }

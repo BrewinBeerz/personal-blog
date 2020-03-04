@@ -13,17 +13,17 @@ import GrandCanyon from "../photos/albums/GrandCanyon";
 
 export default function Router() {
   return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/blog/postdetails/:id" component={PostDetails} />
-        <Route path="/photos" component={Photos} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/recipes" component={Recipes} />
-        <Route path="/travel" component={Travel} />
-        <Route path="/arches" component={Arches} />
-        <Route path="/canyonlands" component={Canyonlands} />
-        <Route path="/grandcanyon" component={GrandCanyon} />
-      </Switch>
+    <div className="content">
+      <Route exact path="/" component={Home} />
+      <Route exact path="/blog" component={Blog} />
+      <Route exact path="/blog/postdetails/:id" component={PostDetails} />
+      <Route path="/photos" component={Photos} />
+      <Route path="/projects" component={Projects} />
+      <Route path="/recipes" component={Recipes} />
+      <Route path="/travel" component={Travel} />
+      <Route path="/arches" component={Arches} />
+      <Route path="/canyonlands" component={Canyonlands} />
+      <Route path="/grandcanyon" component={GrandCanyon} />
+    </div>
   );
 }
