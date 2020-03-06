@@ -33,7 +33,7 @@ export default function Header() {
             <Nav.Item>
               <Nav.Link>
                 <NavLink
-                  to="/photos"
+                  to="/albums"
                   activeClassName="navbar__link--active"
                   className="navbar__link">
                   PHOTOS
