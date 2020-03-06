@@ -20,7 +20,6 @@ export default function Posts(props) {
     }
   }
   getFeaturedImage();
-  console.log(featuredImage)
 
   return (
     <Card className="blog-card">

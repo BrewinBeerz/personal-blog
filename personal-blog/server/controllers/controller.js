@@ -21,7 +21,7 @@ module.exports = {
   },
   getPostDetails: (req, res) => {
     console.log("getPostDetails");
-    var id = req.params.id
+    let id = req.params.id
     axios
       .get(
         `http://localhost:8000/wp-json/wp/v2/posts/${id}?_embed`
@@ -36,6 +36,18 @@ module.exports = {
     axios
       .get(
         `https://www.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=${flickrToken}&user_id=${flickerUser}&format=json&nojsoncallback=1&primary_photo_extras=url_m`
+      )
+      .then(response => {
+        res.status(200).json(response.data);
+      })
+      .catch(err => res.status(400).send(err.message));
+  },
+  getAlbumsPhotos: (req, res) => {
+    console.log("getAlbumsPhotos");
+    let photosetID = req.params.id
+    axios
+      .get(
+        `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${flickrToken}&photoset_id=${photosetID}&user_id=${flickerUser}&format=json&nojsoncallback=1`
       )
       .then(response => {
         res.status(200).json(response.data);

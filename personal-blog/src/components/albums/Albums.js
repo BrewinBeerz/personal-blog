@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CardDeck } from "react-bootstrap";
-import Photos from "./photos/Photos";
+import Photos from "./PhotoAlbums";
 import axios from "axios";
 import './albums.css'
 

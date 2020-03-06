@@ -32,4 +32,5 @@ app.use(express.static(staticDIR))
 app.get('/api/posts', controller.getPosts);
 app.get('/api/posts/details/:id', controller.getPostDetails)
 app.get('/api/albums', controller.getAlbums)
+app.get('/api/albums/details/:id', controller.getAlbumsPhotos)
 
