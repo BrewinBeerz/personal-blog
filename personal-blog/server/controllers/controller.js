@@ -47,7 +47,7 @@ module.exports = {
     let photosetID = req.params.id
     axios
       .get(
-        `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${flickrToken}&photoset_id=${photosetID}&user_id=${flickerUser}&format=json&nojsoncallback=1`
+        `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${flickrToken}&photoset_id=${photosetID}&user_id=${flickerUser}&format=json&nojsoncallback=1&extras=url_s,url_m,url_t,url_o`
       )
       .then(response => {
         res.status(200).json(response.data);

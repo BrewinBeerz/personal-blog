@@ -1,0 +1,29 @@
+.image-grid-container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.images {
+    display: flex;
+    object-fit: cover;
+    object-position: 50% 0;
+    padding: 10px;
+    width: 25vw;
+	height: 25vw;
+}
+
+.images:hover {
+    box-shadow: 0 0 2px 1px #727350;
+}
