@@ -14,7 +14,7 @@ import {
 class Home extends Component {
   render() {
     return (
-      <div className="home">
+      <div className="home" style={{ paddingTop: "20px" }}>
         <div className="home-left">
           <img className="home-intro-image" src="./intro_photo.jpg"></img>
         </div>
