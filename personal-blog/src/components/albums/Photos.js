@@ -30,22 +30,18 @@ export default function Photos() {
       )}
       <hr />
       <div className="image-grid-container">
-        <div className="image-grid">
           {photo
             ? photo
                 .sort((a, b) => b.id - a.id)
                 .map((pic, index) => (
-                  <div>
                     <img
                       index={index}
                       className="images"
                       onClick={handleShow}
                       src={`${pic.url_m}`}
                     ></img>
-                  </div>
                 ))
             : "Loading..."}
-        </div>
       </div>
     </div>
   );

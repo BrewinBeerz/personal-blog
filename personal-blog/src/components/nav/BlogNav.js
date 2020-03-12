@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import "./BlogNav.css";
+import "./blog-nav.css";
 
 export default function BlogNav() {
   return (

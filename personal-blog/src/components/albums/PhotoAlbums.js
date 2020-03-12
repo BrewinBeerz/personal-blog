@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
 
 export default function PhotoAlbums(props) {
   const { album } = props;
@@ -14,26 +13,23 @@ export default function PhotoAlbums(props) {
 
   return (
     <div>
-      { album ? <Card className="albums-card">
-        <Link to={`/albums/${id}`}>
-          <Card.Img
-            variant="top"
-            src={albumCover}
-            className="albums-card-image"
-          ></Card.Img>
-        </Link>
-        <Card.Body className="albums-card-body">
-          <Card.Title>
-            <p dangerouslySetInnerHTML={{ __html: title }} />
-            <p dangerouslySetInnerHTML={{ __html: photoCount + " photos" }} />
-          </Card.Title>
-        </Card.Body>
-        <Card.Footer className="albums-card-footer">
-          <small className="text-muted">
-            {"Last Updated: " + convertedDate}
-          </small>
-        </Card.Footer>
-      </Card> : 'loading...'}
+      {album ? (
+        <div className="photo-album-card">
+          <Link to={`/albums/${id}`}>
+            <img
+              src={albumCover}
+              className="photo-album-image"
+            ></img>
+          </Link>
+          <div className="photo-album-card-body">
+            <h4 dangerouslySetInnerHTML={{ __html: title }} />
+            <h6 dangerouslySetInnerHTML={{ __html: photoCount + " photos" }} />
+            <p className="text-muted">{"Last Updated: " + convertedDate}</p>
+          </div>
+        </div>
+      ) : (
+        "loading..."
+      )}
     </div>
   );
 }

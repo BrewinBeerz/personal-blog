@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
 
 export default function Posts(props) {
   const { post } = props;
@@ -12,35 +11,24 @@ export default function Posts(props) {
 
   let featuredImage;
   let getFeaturedImage = () => {
-    if(post._embedded['wp:featuredmedia']){
-      return featuredImage = post._embedded['wp:featuredmedia'][0].source_url
+    if (post._embedded["wp:featuredmedia"]) {
+      return (featuredImage = post._embedded["wp:featuredmedia"][0].source_url);
+    } else {
+      return (featuredImage = "");
     }
-    else {
-      return featuredImage = ''
-    }
-  }
+  };
   getFeaturedImage();
 
   return (
-    <Card className="blog-card">
+    <div className="blog-card">
       <Link to={`/blog/postdetails/${id}`}>
-        <Card.Img
-          variant="top"
-          src={featuredImage}
-          className="blog-card-image"
-        ></Card.Img>
+        <img src={featuredImage} className="blog-card-image"></img>
       </Link>
-      <Card.Body className="blog-card-body">
-        <Card.Title>
-          <p dangerouslySetInnerHTML={{ __html: title }} />
-        </Card.Title>
-        <Card.Text className="blog-card-text">
-          <p dangerouslySetInnerHTML={{ __html: excerpt }} />
-        </Card.Text>
-      </Card.Body>
-      <Card.Footer className="blog-card-footer">
-        <small className="text-muted">{"Last Updated: " + date}</small>
-      </Card.Footer>
-    </Card>
+      <div className="blog-card-body">
+        <h4 dangerouslySetInnerHTML={{ __html: title }} />
+        <h6 dangerouslySetInnerHTML={{ __html: excerpt }} />
+        <p className="text-muted">{"Last Updated: " + date}</p>
+      </div>
+    </div>
   );
 }

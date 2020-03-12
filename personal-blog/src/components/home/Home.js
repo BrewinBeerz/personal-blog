@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Home.css";
+import "./home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Carousel, Card, CardImg } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,7 @@ class Home extends Component {
     return (
       <div className="home">
         <div className="home-left">
-          <img src="./intro_photo.jpg"></img>
+          <img className="home-intro-image" src="./intro_photo.jpg"></img>
         </div>
         <div className="home-right">
           <h1>Danny Squitin</h1>

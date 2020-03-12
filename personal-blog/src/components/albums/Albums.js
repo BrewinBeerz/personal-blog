@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { CardDeck } from "react-bootstrap";
-import Photos from "./PhotoAlbums";
+import PhotosAlbums from "./PhotoAlbums";
 import axios from "axios";
-import './albums.css'
+import "./albums.css";
 
 export default function Albums() {
   const [album, setAlbum] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/albums").then(response => setAlbum(response.data.photosets.photoset));
+    axios
+      .get("/api/albums")
+      .then(response => setAlbum(response.data.photosets.photoset));
   }, []);
 
   return (
-    <div className="albums-container">
+    <div>
       <h2 style={{ paddingBottom: "20px", paddingTop: "20px" }}>Albums</h2>
-      <CardDeck className="albums-card-deck">
-      {album
+      <div className="albums-container">
+        {album
           .sort((a, b) => a.id - b.id)
           .map((album, index) => (
-            <Photos key={index} index={index} album={album}></Photos>
+            <PhotosAlbums
+              key={index}
+              index={index}
+              album={album}
+            ></PhotosAlbums>
           ))}
-      </CardDeck>
+      </div>
     </div>
   );
 }

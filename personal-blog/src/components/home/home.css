@@ -1,13 +1,12 @@
 .home {
   display: flex;
-  flex: 1 100%;
 }
 
 .home-left {
+  justify-content: flex-end;
   height: 100%;
   width: 50%;
-  color: black;
-  background: #eeeeee;
+  background-color: black;
   min-height: 500px;
 }
 
@@ -43,8 +42,9 @@
     color: #727350;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 992px) {
   .home {
+    display: flex;
     flex-direction: column;
   }
 
@@ -62,5 +62,21 @@
   .home-footer {
     padding-top: 100px;
     padding-bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .home {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  .home {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
