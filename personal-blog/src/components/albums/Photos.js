@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./photos.css";
-import Modal from "./Modal";
+import ImageGallery from "react-image-gallery";
+import './photos.css';
+import "react-image-gallery/styles/css/image-gallery.css";
 
 export default function Photos() {
   let { id } = useParams();
@@ -11,20 +12,34 @@ export default function Photos() {
   const [imgURL, setImgURL] = useState([]);
 
   const handleShow = (e) => {
-    setShow(true)
-    setImgURL(e.target.src)
-    console.log(e.target.src)
-  }
+    setShow(true);
+    setImgURL(e.target.src);
+    console.log(e.target.src);
+  };
 
   const handleClose = () => setShow(false);
 
   useEffect(() => {
     axios
       .get(`/api/albums/details/${id}`)
-      .then(response => setPhotos(response.data.photoset));
+      .then((response) => setPhotos(response.data.photoset));
   }, []);
 
   const { title, photo } = photos;
+
+  let images = [];
+
+  if (photo) {
+    photo.map((picture) => {
+      images.push({
+        original: picture.url_o,
+        thumbnail: picture.url_t,
+        fullscreen: picture.url_o
+      });
+    });
+  }
+
+  console.log(images);
 
   return (
     <div>
@@ -34,22 +49,9 @@ export default function Photos() {
         "Loading..."
       )}
       <hr />
-      <div className="image-grid-container">
-        {photo
-          ? photo
-              .sort((a, b) => b.id - a.id)
-              .map((pic, index) => (
-                <img
-                  id='image'
-                  index={index}
-                  className="images"
-                  onClick={handleShow}
-                  src={`${pic.url_m}`}
-                ></img>
-              ))
-          : "Loading..."}
+      <div className="image-gallery-container">
+        <ImageGallery items={images} />
       </div>
-      <Modal show={show} handleClose={handleClose} src={imgURL}/>
     </div>
   );
 }

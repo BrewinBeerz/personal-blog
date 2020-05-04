@@ -19,18 +19,12 @@ class Home extends Component {
           <img className="home-intro-image" src="./intro_photo.jpg"></img>
         </div>
         <div className="home-right">
-          <h1>Danny Squitin</h1>
+          <h1>Hi, I'm Danny Squitin</h1>
           <br/>
-          <h4>
-            Software Engineer.
+          <h5>
+            I'm a Software Engineer residing in Phoenix, AZ. My fiance and I, along with our pack of animals recently moved from Atlanta, Georgia. I love traveling and the outdoors. I'm also a huge beer, bourbon and BBQ fanatic. I plan on using this site to share recipes, experiences and other things I find interesting. Follow me on the social links below for more.
             <br />
-            Outdoorsman.
-            <br />
-            Beer, bourbon & barbeque fanatic. <br />
-            Engaged. Dog & Cat Dad.
-            <br />
-            Residing in Phoenix, AZ.
-          </h4>
+          </h5>
           <div className="home-footer" style={{ color: "white" }}>
             <a
               id="links"
